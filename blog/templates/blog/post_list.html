@@ -1,5 +1,4 @@
 {% extends 'blog/base.html' %}
-
 {% load static %}
 {% block content %}
 {% for post in posts %}
@@ -7,8 +6,7 @@
                 <p>published: {{ post.published_date }}</p>
                 <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                 <p>{{ post.text|linebreaksbr }}</p>
-            </div><a href="<div data-gb-custom-block data-tag="url" data-0='post_detail'>
-</div>Comments: {{ post.comments.count }}</a>
-        {% endfor %}
+            </div><a href="<div data-gb-custom-block data-tag='url' data-0='post_detail'></div>">Comments: {{ post.comments.count }}</a>
+{% endfor %}
 {% endblock %}
 
